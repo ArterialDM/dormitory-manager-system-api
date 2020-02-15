@@ -26,7 +26,7 @@
     * [程序架构](#程序架构)
 * [程序详细设计](#程序详细设计)
     * [表结构Sql摘录](#表结构Sql摘录)
-    * [引入重要库](#引入重要库)
+    * [重要库](#重要库)
     * [Http接口摘录](#Http接口摘录)
     * [JSON结构摘录](#JSON结构摘录)
 * [总结](#总结)
@@ -135,7 +135,7 @@
 
 学校的每张床对应表的一条记录
 
-### 引重要入库
+### 重要库
 
 #### JDBC操作库
 
@@ -151,15 +151,28 @@
 #### Http接收和响应库
 
     import org.springframework.web.bind.annotation.RestController;
+    import org.springframework.web.bind.annotation.GetMapping;
     import org.springframework.web.bind.annotation.PostMapping;
     import org.springframework.web.bind.annotation.RequestBody;
     
+### Http接口摘录
 
+#### 学生类
 
+    http://localhost/addStudent POST
 
+通过POST方式把新学生的数据以JSON的形式发到这个接口上来实现增加学生功能，会返回一个JSON数据告知用户端是否操作成功。
 
-    
+    http://localhost/deleteStudent POST
+
+通过POST方式把所要删除的学生的序号以JSON的形式发到这个接口上来实现删除学生功能，会返回一个JSON数据告知用户端是否操作成功。   
         
+    http://localhost//student GET
+    
+通过GET方式访问这个接口会返回一个包含所有学生的JSON Array。   
+
+#### 床类
+
 
 ## 总结
 
