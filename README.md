@@ -23,8 +23,9 @@
 * [数据库概念结构](#数据库概念结构)
     * [E—R图](#E—R图)
 * [程序概要设计](#程序概要设计)
-    * [流程简述](#流程简述)
+    * [程序架构](#程序架构)
 * [程序详细设计](#程序详细设计)
+    * [表结构Sql摘录](#表结构Sql摘录)
     * [引入库](#引入库)
     * [Score类](#Score类)
     * [Vegetable类](#Vegetable类)
@@ -98,7 +99,40 @@
 
 ## 程序详细设计
 
+### 表结构Sql摘录
+
 ### 引入库
+
+#### 学生表
+
+    create table student
+    (
+      count int auto_increment,
+      studentID varchar(45) null,
+      college varchar(45) null,
+      bedID varchar(45) null,
+      name varchar(45) null,
+      date1 varchar(45) null,
+      date2 varchar(45) null,
+      live boolean null,
+      politics varchar(45) null,
+      sex varchar(45) null,
+      `desc` varchar(300) null,
+      constraint student_pk
+        primary key (count)
+    );
+    
+#### 床表
+
+    create table bed
+    (
+      count int auto_increment,
+      bedID varchar(45) null,
+      buildingID varchar(45) null,
+      can boolean null,
+      constraint bed_pk
+        primary key (count)
+    );
 
 ### Score类
 
@@ -278,25 +312,22 @@
 
 ### 不足
 
-* 多线程技术不成熟
-- 游戏最终运行起来有一个刷钱和刷金币的漏洞
+* 登录系统是用客户端实现的，后端系统没有实现维护登陆态功能，通过截获前端的api，可以在没有用特权用户账号登陆的情况下使用特权账号的功能
 
 ### 困难
 
-一开始我想用一个二维数组来存储每块田的使用情况，然后发现达不到我想要的效果，在CSDN上看见了一个开发马里奥游戏的java代码，里面有一段碰撞检测的代码使用了多线程，我觉得我的游戏就是需要这个效果，然后看了一下资料，然后试了几遍，就行了，不过具体原理还不是太会。
+* 一开始没用前端框架直接写html发现代码量巨大而且写出来的界面单调简单
+- 第一次尝试通过组件化工具套件设计UI界面
+* 一开始直接在数据库用字符串类型存储日期信息，导致时区信息紊乱，并且需要编写很多专门处理包含日期信息的字符串的代码
 
 ### 收获
 
-* 会了一点点多线程
-- 对JAVA熟练了一点
+* 用timestamp技术来存储时间信息而非直接存储日期字符串
+- 用element UI和vue.js前端框架可以省去很多重复性代码并且能快速编写出漂亮的用户界面
 
 ### 结语
 
-### 这份简简单单的Java作业是我第一次尝试从代码设计到素材绘画全由自己一个人完成
-  
-现在时间是
-### 2020.2.14  
-### 情人节
+
  
 ## 参考文献
 
