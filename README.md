@@ -230,7 +230,13 @@
 
 ## 软件截图
 
+因为本项目仅仅是后端程序需要另外的前端程序才会有用户界面  
+配套的前端程序请看我的另一个github项目  
+https://github.com/ArterialDM/dormitory-manager-system-web-gui
+
 ### 主界面
+
+![](./pic/9.PNG)
 
 ### 学生登记
 
