@@ -161,18 +161,34 @@
 
     http://localhost/addStudent POST
 
-通过POST方式把新学生的数据以JSON的形式发到这个接口上来实现增加学生功能，会返回一个JSON数据告知用户端是否操作成功。
+通过POST方式把新学生的数据序列化以JSON的形式发到这个接口上来实现增加学生功能，会返回一个JSON数据告知用户端是否操作成功。
 
     http://localhost/deleteStudent POST
 
-通过POST方式把所要删除的学生的序号以JSON的形式发到这个接口上来实现删除学生功能，会返回一个JSON数据告知用户端是否操作成功。   
+通过POST方式把所要删除的学生的序号序列化以JSON的形式发到这个接口上来实现删除学生功能，会返回一个JSON数据告知客户端是否操作成功。   
         
-    http://localhost//student GET
+    http://localhost/student GET
     
-通过GET方式访问这个接口会返回一个包含所有学生的JSON Array。   
+通过GET方式访问这个接口会返回一个包含所有学生的JSON Array。 
 
 #### 床类
 
+    http://localhost/canUseBed POST
+
+通过POST方式把需要查询的床号序列化成JSON发送到服务器，服务器会返回一个JSON数据告知客户端查询的床能不能用。
+
+    http://localhost/studentAddBed POST
+
+通过POST方式把需要分配床的学的学生信息和床号序列化以JSON的形式发送到服务器，服务器会返回一个JSON数据告知客户端分配是否成功。
+
+### JSON结构摘录
+
+#### 学生JSON
+
+    {
+      "studentID":"",
+      "college":"",
+      ""
 
 ## 总结
 
