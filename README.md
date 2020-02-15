@@ -27,7 +27,7 @@
 * [程序详细设计](#程序详细设计)
     * [表结构Sql摘录](#表结构Sql摘录)
     * [重要库](#重要库)
-    * [Http接口摘录](#Http接口摘录)
+    * [http接口摘录](#http接口摘录)
     * [JSON结构摘录](#JSON结构摘录)
 * [总结](#总结)
     * [优点](#优点)
@@ -155,7 +155,7 @@
     import org.springframework.web.bind.annotation.PostMapping;
     import org.springframework.web.bind.annotation.RequestBody;
     
-### Http接口摘录
+### http接口摘录
 
 #### 学生类
 
@@ -188,7 +188,16 @@
     {
       "studentID":"",
       "college":"",
-      ""
+      "count":"",
+      "name":"",
+      "bedID":""
+    }
+    
+#### 操作返回JSON
+
+    {
+      "result":""
+    }
 
 ## 总结
 
